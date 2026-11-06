@@ -3,16 +3,22 @@ import java.util.Scanner;
 public class AdivinhaçãoGMRTE {
     public static void main(String[] args) {    
         Scanner teclado = new Scanner(System.in);
-
+        boolean rodando = true;
                 //Nota: Sinceramente não sei como esse código abaixo de limpar o terminal funciona, vou dar uma pesquisada melhor depois
                 //mas foi o melhor jeito que encontrei pra isso
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-        System.out.printf("Bem vindo ao jogo da adivinhação! Qual modo de jogo você deseja?%n%nDigite 1 para jogador x jogador%nDigite 2 para computador x jogador%n");
-        int modojogo = teclado.nextInt();
+        System.out.printf("Bem vindo ao jogo da adivinhação!%n");
+        while (rodando==true){
+                    System.out.printf("Qual modo de jogo você deseja?%n%nDigite 1 para jogador x jogador%nDigite 2 para computador x jogador%nDigite 0 para encerrar o jogo%n");
+                    int modojogo = teclado.nextInt();
                     System.out.print("\033[H\033[2J");
                     System.out.flush();
-            if (modojogo==1) {
+                    if (modojogo==0) {
+                        rodando=false;
+                        System.out.println("Encerrando programa...");
+                    }
+                else if (modojogo==1) {
                 System.out.printf("Certo, o primeiro jogador deve escolher um número:%n");
                 int resposta = teclado.nextInt();
                 System.out.print("\033[H\033[2J");
@@ -71,6 +77,7 @@ public class AdivinhaçãoGMRTE {
             else {
                 System.out.printf("%nErro, encerrando programa...");
             }
+        }
     teclado.close();
             }                         
 } 
