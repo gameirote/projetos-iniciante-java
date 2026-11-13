@@ -5,6 +5,7 @@ class BancoDadosFilmesGMRTE{
         Scanner teclado = new Scanner(System.in);
         String filmes[] = new String[100];
         boolean rodando = true;
+        int totalfilmes = 0;
             System.out.printf("Bem vindo ao gerenciador de filmes!%n");
 
             while (rodando==true) {
@@ -12,8 +13,10 @@ class BancoDadosFilmesGMRTE{
                 int opcao = teclado.nextInt();
                     if (opcao==1){
                         System.out.printf("Certo, qual filme deseja adicionar a lista?%n%n");
-                        filmes[0] = teclado.nextLine();
-                        System.out.println(filmes);
+                        filmes[totalfilmes] = teclado.nextLine();
+                            for    
+                            System.out.println(filmes);
+                        totalfilmes = totalfilmes+1;
                     }
 
             }
